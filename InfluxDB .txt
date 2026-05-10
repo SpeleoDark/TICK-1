@@ -1,0 +1,21 @@
+[meta]
+  dir = "/var/lib/influxdb/meta"
+
+[data]
+  dir = "/var/lib/influxdb/data"
+  wal-dir = "/var/lib/influxdb/wal"
+  engine = "tsm1"
+
+[http]
+  enabled = true
+  bind-address = ":8086"
+  auth-enabled = false   # Управление пользователями включено отдельно
+
+[retention]
+  enabled = true
+  check-interval = "30m"
+
+[monitor]
+  store-enabled = true
+  store-database = "_internal"
+  store-interval = "10s"
